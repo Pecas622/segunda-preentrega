@@ -1,0 +1,159 @@
+// variables.scss (opcional para manejar colores y fuentes)
+$background-color: beige;
+$text-color: black;
+$header-background-color: grey;
+$header-text-color: white;
+$hover-color: lighten($header-background-color, 20%);
+$font-encabezado: "Dancing Script", cursive;
+$font-bienvenida: "Merriweather", serif;
+$button-background-color: darken($header-background-color, 10%);
+$button-hover-color: darken($header-background-color, 20%);
+$button-text-color: $header-text-color;
+$card-text-color: #ff6347; //color del texto de la tarjeta
+$card-width: 200px; // ancho de la tarjeta
+$card-height: 300px; //altura de la tarjeta
+// estilos.scss
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $background-color;
+    color: $text-color;
+}
+
+header {
+    height: 200px;
+
+    .logo,
+    .encabezado,
+    .bienvenida {
+        text-align: center;
+        background-color: $header-background-color;
+        color: $header-text-color;
+        border: 2px solid $header-background-color;
+        border-radius: 5px;
+    }
+
+    .encabezado {
+        font-family: $font-encabezado;
+        font-size: 2rem; // Cambia este valor según tus necesidades
+    }
+
+    .bienvenida {
+        font-family: $font-bienvenida;
+        font-size: 1.5rem; // Cambia este valor según tus necesidades
+    }
+}
+
+.navbar {
+    align-content: center;
+    background-color: $header-background-color;
+
+    .nav-link {
+        color: $header-text-color;
+        padding: .5rem 1rem;
+        text-decoration: none;
+        transition: background-color 0.3s ease, transform 0.3s ease; // Añadimos transición
+
+        &:hover {
+            background-color: $hover-color;
+            color: darken($header-text-color, 10%);
+            transform: scale(1.05); // Efecto de zoom in
+        }
+    }
+}
+
+// Jumbotron
+.jumbotron {
+    background-color: $header-background-color;
+    color: $header-text-color;
+    padding: 2rem;
+    border-radius: .3rem;
+    text-align: center;
+}
+
+// Carrusel
+.carrusel {
+    margin-top: 20px;
+}
+
+// Footer
+footer {
+    background-color: $header-background-color;
+    color: $header-text-color;
+    padding: 20px;
+    text-align: center;
+}
+
+.suscribe {
+    margin-bottom: 20px;
+}
+
+.newsletter {
+    label {
+        display: block;
+        margin-bottom: .5rem;
+    }
+
+    .textoF {
+        display: block;
+        width: 100%;
+        margin-bottom: 1rem;
+        padding: .5rem;
+    }
+
+    .botonF {
+        display: block;
+        width: 100%;
+        padding: .5rem;
+        background-color: darken($header-background-color, 10%);
+        color: $header-text-color;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+            background-color: darken($header-background-color, 20%);
+        }
+    }
+}
+
+// Cards
+.card {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out; // Añadimos transición a la tarjeta
+
+    &:hover {
+        transform: scale(1.10); // Efecto de zoom in en la tarjeta
+    }
+
+    .card-body {
+        .card-text {
+            color: $card-text-color; // Aplicamos el color definido
+        }
+    }
+
+    &-img-top {
+        transition: transform 0.3s ease-in-out;
+    }
+
+
+    .parrafoFooter {
+        margin-top: 1rem;
+    }
+
+    .iconos {
+        margin-top: 10px;
+
+        i {
+            margin: 0 5px;
+            font-size: 1.5rem;
+            color: $header-text-color;
+        }
+    }
+}
